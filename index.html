@@ -1,24 +1,254 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
-    <title>Top Captions</title>
-    <meta name="description" content="Top Captions — built on Replit. Update this description to reflect the app." />
-    <meta name="robots" content="index, follow" />
-    <meta property="og:title" content="Top Captions" />
-    <meta property="og:description" content="Top Captions — built on Replit. Update this description to reflect the app." />
-    <meta property="og:type" content="website" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Top Captions" />
-    <meta name="twitter:description" content="Top Captions — built on Replit. Update this description to reflect the app." />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Captions - פלאגין כתוביות אוטומטיות</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="glow-bg"></div>
+
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="nav-logo">
+            <img src="logo.png" alt="Top Captions" class="logo-img glow-effect">
+        </div>
+        <a href="TopCaptions-Setup.exe" download class="btn btn-nav">התחילו בחינם</a>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero reveal-on-scroll">
+        <div class="hero-logo-wrapper">
+            <img src="logo.png" alt="Top Captions" class="hero-logo floating-logo glow-effect-deep">
+        </div>
+        <h1>כתוביות מדויקות בעברית בלחיצת כפתור</h1>
+        <p class="subtitle">עיבוד מקומי ומהיר ישירות בתוך תוכנת העריכה שלך.</p>
+        <div class="software-badges">
+            <span class="badge">Premiere Pro</span>
+            <span class="badge">After Effects</span>
+            <span class="badge badge-win">Windows</span>
+        </div>
+        <div class="hero-cta">
+            <a href="TopCaptions-Setup.exe" download class="btn btn-main glow-button">התחילו בחינם</a>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="reviews reveal-on-scroll">
+        <div class="review-card">
+            <div class="review-header">
+                <div class="avatar">M</div>
+                <div class="author-info">
+                    <div class="author-name">SLK|MICHAEL</div>
+                    <div class="author-role">עורך ויוצר תוכן</div>
+                </div>
+            </div>
+            <p class="review-text">"זה לא סתם פלאגין של כתוביות, הדיוק והאיכות ברמה מטורפת"</p>
+            <div class="stars">★★★★★</div>
+        </div>
+
+        <div class="more-reviews-container" id="more-reviews">
+            <div class="review-card">
+                <div class="review-header">
+                    <div class="avatar">A</div>
+                    <div class="author-info">
+                        <div class="author-name">Alex Vance</div>
+                        <div class="author-role">עורך וידאו מסחרי</div>
+                    </div>
+                </div>
+                <p class="review-text">"חסך לי שעות של עבודה סיזיפית על כתוביות בפרימייר. הדיוק בעברית פשוט חסר תקדים."</p>
+                <div class="stars">★★★★★</div>
+            </div>
+            <div class="review-card">
+                <div class="review-header">
+                    <div class="avatar">D</div>
+                    <div class="author-info">
+                        <div class="author-name">Daniel Miller</div>
+                        <div class="author-role">יוצר תוכן לטיקטוק ואינסטגרם</div>
+                    </div>
+                </div>
+                <p class="review-text">"הכלי הכי חובה שיש לכל מי שמעלה סרטונים בקצב גבוה. עובד חלק ובלי תקלות."</p>
+                <div class="stars">★★★★★</div>
+            </div>
+            <div class="review-card">
+                <div class="review-header">
+                    <div class="avatar">M</div>
+                    <div class="author-info">
+                        <div class="author-name">Michael Ross</div>
+                        <div class="author-role">Motion Designer</div>
+                    </div>
+                </div>
+                <p class="review-text">"השילוב הישיר בתוך אקסטנשן של אפטר אפקטס הוא גיים צ'יינג'ר אמיתי לעריכת Reels."</p>
+                <div class="stars">★★★★★</div>
+            </div>
+            <div class="review-card">
+                <div class="review-header">
+                    <div class="avatar">E</div>
+                    <div class="author-info">
+                        <div class="author-name">Ethan Cole</div>
+                        <div class="author-role">עורך פודקאסטים וסרטונים ארוכים</div>
+                    </div>
+                </div>
+                <p class="review-text">"תמליל עברית מדויק גם כשהדוברים מדברים מהר. שווה כל שקל ומחזיר את ההשקעה מיד."</p>
+                <div class="stars">★★★★★</div>
+            </div>
+            <div class="review-card">
+                <div class="review-header">
+                    <div class="avatar">S</div>
+                    <div class="author-info">
+                        <div class="author-name">Sean Brody</div>
+                        <div class="author-role">עורך יוטיוב ויוצר תוכן</div>
+                    </div>
+                </div>
+                <p class="review-text">"העובדה שהכל מעובד מקומית על המחשב בלי להעלות קבצים לשרתים חיצוניים זה יתרון עצום."</p>
+                <div class="stars">★★★★★</div>
+            </div>
+            <div class="review-card">
+                <div class="review-header">
+                    <div class="avatar">L</div>
+                    <div class="author-info">
+                        <div class="author-name">Liam Brooks</div>
+                        <div class="author-role">במאי ועורך פרויקטים</div>
+                    </div>
+                </div>
+                <p class="review-text">"הפיצול החכם לפי משפטים חוסך 90% מהעבודה הידנית שהייתי עושה עד היום."</p>
+                <div class="stars">★★★★★</div>
+            </div>
+            <div class="review-card">
+                <div class="review-header">
+                    <div class="avatar">J</div>
+                    <div class="author-info">
+                        <div class="author-name">Jason Reed</div>
+                        <div class="author-role">עורך פרומואים ופרסומות</div>
+                    </div>
+                </div>
+                <p class="review-text">"ממשק נקי, פשוט להפעלה ותוצאות מדהימות. ממליץ בחום לכל עורך בארץ."</p>
+                <div class="stars">★★★★★</div>
+            </div>
+            <div class="review-card">
+                <div class="review-header">
+                    <div class="avatar">N</div>
+                    <div class="author-info">
+                        <div class="author-name">Noah Bennett</div>
+                        <div class="author-role">יוצר תוכן דיגיטלי</div>
+                    </div>
+                </div>
+                <p class="review-text">"סוף סוף תוסף שלא דורש מנוי חודשי ומביא ביצועים של כלים יקרים בהרבה."</p>
+                <div class="stars">★★★★★</div>
+            </div>
+            <div class="review-card">
+                <div class="review-header">
+                    <div class="avatar">R</div>
+                    <div class="author-info">
+                        <div class="author-name">Ryan Stark</div>
+                        <div class="author-role">עורך וידאו עצמאי</div>
+                    </div>
+                </div>
+                <p class="review-text">"מהירות העיבוד פשוט מטורפת. מזינים את הסאונד ותוך שניות הכתוביות מוכנות בדיוק רב."</p>
+                <div class="stars">★★★★★</div>
+            </div>
+        </div>
+
+        <button id="toggle-reviews-btn" class="btn-toggle-reviews">הצג את כל הביקורות (10)</button>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing reveal-on-scroll">
+        <div class="pricing-card floating-card">
+            <div class="launch-tag">מחיר השקה special</div>
+            <h3>רישיון לכל החיים</h3>
+            <div class="price-wrap">
+                <span class="price">₪50</span>
+                <span class="old-price">₪100</span>
+            </div>
+            <p class="pricing-note">תשלום חד-פעמי • ללא מנוי מתחדש</p>
+            <ul class="features">
+                <li>✓ תוסף מקומי מלא על המחשב שלך</li>
+                <li>✓ תמיכה מלאה ב-Premiere Pro & After Effects</li>
+                <li>✓ תמיכה במערכת הפעלה Windows</li>
+                <li>✓ תמלול עברית מהיר ומדויק בלחיצה</li>
+                <li>✓ ללא תשלומים חודשיים וללא עמלות נסתרות</li>
+            </ul>
+            <a href="https://payhip.com/buy?s=1&cart_links%5B%5D=r3KyH&qty%5Br3KyH%5D=1" target="_blank" class="btn btn-main btn-full buy-btn">רכישת הפלאגין ב-50% הנחה</a>
+        </div>
+    </section>
+
+    <!-- Tutorial Video -->
+    <section class="video-section reveal-on-scroll">
+        <h2>מדריך התקנה</h2>
+        <div class="video-wrapper">
+            <video controls playsinline>
+                <source src="video.mp4" type="video/mp4">
+                הדפדפן שלך אינו תומך בהפעלת וידאו.
+            </video>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq reveal-on-scroll">
+        <h2>שאלות נפוצות</h2>
+        <div class="faq-accordion">
+            <div class="faq-item">
+                <button class="faq-btn">
+                    <span>האם ניתן לנסות את הפלאגין בחינם?</span>
+                    <span class="arrow">+</span>
+                </button>
+                <div class="faq-content">
+                    <p>כן! פשוט לחצו על 'התחילו בחינם' בראש העמוד, ותקבלו אוטומטית 5 דקות של תמלול בחינם לגמרי וללא צורך בתשלום.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-btn">
+                    <span>באילו תוכנות ומערכות הפעלה הפלאגין עובד?</span>
+                    <span class="arrow">+</span>
+                </button>
+                <div class="faq-content">
+                    <p>הפלאגין פותח במיוחד עבור <strong>Adobe Premiere Pro</strong> ו-<strong>Adobe After Effects</strong> ומותאם לעבודה על מערכת <strong>Windows</strong> בלבד.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-btn">
+                    <span>איך מקבלים את הקובץ לאחר הרכישה?</span>
+                    <span class="arrow">+</span>
+                </button>
+                <div class="faq-content">
+                    <p>מיד לאחר ביצוע התשלום תועבר לדף ההורדה, ובמקביל יישלח אליך אימייל עם קובץ ההתקנה והנחיות קצרות.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-btn">
+                    <span>איך פונים לתמיכה טכנית?</span>
+                    <span class="arrow">+</span>
+                </button>
+                <div class="faq-content">
+                    <p>לכל שאלה או סיוע בהתקנה, ניתן לפנות לצוות התמיכה במייל: <a href="mailto:topcaptions@gmail.com" class="mail-link">topcaptions@gmail.com</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 Top Captions. כל הזכויות שמורות.</p>
+        <a href="#" id="privacy-link">מדיניות פרטיות ותנאי שימוש</a>
+    </footer>
+
+    <!-- Privacy Modal -->
+    <div id="privacy-modal" class="modal">
+        <div class="modal-box">
+            <span class="close-btn">&times;</span>
+            <h2>מדיניות פרטיות - Top Captions</h2>
+            <div class="modal-body">
+                <p><strong>פרטיות מלאה ועבודה מקומית:</strong> הפלאגין Top Captions פועל באופן מקומי על גבי המחשב שלך. איננו אוספים, שומרים או מעבירים מידע אישי, נתוני פרויקטים או קובצי מדיה לשרתים חיצוניים.</p>
+                <p><strong>רכישה וסליקה:</strong> נתוני התשלום והאימייל מעובדים באופן מאובטח בלבד על ידי ספק הסליקה המורשה בעת הרכישה לצורך הנפקת הקבלה ואספקת קובץ ההתקנה.</p>
+                <p><strong>רישיון לכל החיים:</strong> הרכישה מעניקה רישיון לשימוש אישי ומסחרי לכל החיים (Lifetime License) בתשלום חד-פעמי. אין מנוי מתחדש ואין עמלות נוספות.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
 </html>
