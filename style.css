@@ -138,13 +138,34 @@ h1 { font-size: 2.6rem; font-weight: 900; letter-spacing: -0.5px; margin-bottom:
 .features li { margin-bottom: 10px; color: var(--text-primary); font-size: 0.95rem; }
 .btn-full { width: 100%; }
 
-.video-section { max-width: 750px; margin: 50px auto; padding: 0 20px; text-align: center; }
+.video-section { max-width: 520px; margin: 50px auto; padding: 0 20px; text-align: center; }
 .video-section h2 { margin-bottom: 20px; }
-.video-wrapper {
-    border-radius: var(--radius); overflow: hidden;
-    border: 1px solid var(--card-border); box-shadow: 0 0 30px rgba(255,75,96,0.1); background: #000;
+
+@keyframes gradientBorder {
+    0%   { background-position: 0%   50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0%   50%; }
 }
-.video-wrapper video { width: 100%; display: block; max-height: 480px; }
+
+.video-border-wrap {
+    border-radius: calc(var(--radius) + 3px);
+    padding: 3px;
+    background: linear-gradient(135deg, #ff4b60, #a855f7, #3b82f6, #ff4b60);
+    background-size: 300% 300%;
+    animation: gradientBorder 4s ease infinite;
+    box-shadow:
+        0 0 28px rgba(255, 75, 96, 0.4),
+        0 0 56px rgba(168, 85, 247, 0.2),
+        0 0 80px rgba(59, 130, 246, 0.1);
+}
+
+.video-wrapper {
+    border-radius: var(--radius);
+    overflow: hidden;
+    background: #000;
+}
+
+.video-wrapper video { width: 100%; display: block; }
 
 h2 { text-align: center; font-size: 1.8rem; margin-bottom: 25px; }
 
@@ -167,6 +188,24 @@ footer {
     border-top: 1px solid var(--card-border); color: var(--text-secondary); font-size: 0.85rem;
 }
 footer a { color: var(--text-secondary); margin-top: 8px; display: inline-block; }
+
+.footer-social {
+    display: flex; justify-content: center; gap: 12px; margin-bottom: 16px;
+}
+.social-link {
+    display: flex; align-items: center; justify-content: center;
+    width: 44px; height: 44px; border-radius: 50%;
+    background: var(--card-bg); border: 1px solid var(--card-border);
+    color: var(--text-secondary); text-decoration: none;
+    transition: all 0.3s var(--ease-elastic);
+}
+.social-link:hover {
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-4px) scale(1.12);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.18), 0 0 40px rgba(168, 85, 247, 0.2);
+    background: #0a0a0a;
+}
 
 .modal {
     display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
