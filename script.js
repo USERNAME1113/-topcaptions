@@ -46,13 +46,6 @@ if (privacyLink && privacyModal) {
     privacyLink.addEventListener('click', e => { e.preventDefault(); privacyModal.style.display = 'flex'; });
 }
 
-// "התחילו בחינם" CTAs — smooth scroll straight to the pricing section
-document.querySelectorAll('#start-free-nav, #start-free-hero').forEach(btn => {
-    btn.addEventListener('click', e => {
-        const target = document.getElementById('pricing');
-        if (target) {
-            e.preventDefault();
-            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-    });
-});
+// "התחילו בחינם" buttons now download the .zxp plugin file directly via the
+// native href+download attributes on the <a> tags — no JS needed for that.
+// (Intentionally no click handler here so the browser's default download behavior isn't blocked.)
