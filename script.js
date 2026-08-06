@@ -28,7 +28,7 @@ const observer = new IntersectionObserver(entries => {
 }, { threshold: 0.12 });
 document.querySelectorAll('.reveal-on-scroll').forEach(el => observer.observe(el));
 
-// Generic Modal Handling (works for privacy modal + guide modal)
+// Generic Modal Handling (privacy modal)
 document.querySelectorAll('.modal .close-btn').forEach(btn => {
     btn.addEventListener('click', () => {
         const parentModal = btn.closest('.modal');
@@ -46,35 +46,13 @@ if (privacyLink && privacyModal) {
     privacyLink.addEventListener('click', e => { e.preventDefault(); privacyModal.style.display = 'flex'; });
 }
 
-// Installation Guide Modal (carousel)
-const guideModal = document.getElementById('guide-modal');
-const guideSlides = document.querySelectorAll('.guide-slide');
-const guidePrev = document.querySelector('.guide-prev');
-const guideNext = document.querySelector('.guide-next');
-let guideStep = 0;
-
-function showGuideStep(index) {
-    guideSlides.forEach((slide, i) => slide.classList.toggle('active', i === index));
-    if (guidePrev) guidePrev.classList.toggle('hidden', index === 0);
-    if (guideNext) guideNext.classList.toggle('hidden', index === guideSlides.length - 1);
-    guideStep = index;
-}
-
-function openGuideModal() {
-    if (!guideModal) return;
-    showGuideStep(0);
-    guideModal.style.display = 'flex';
-}
-
-['start-free-nav', 'start-free-hero'].forEach(id => {
-    const btn = document.getElementById(id);
-    if (btn) btn.addEventListener('click', e => { e.preventDefault(); openGuideModal(); });
+// "התחילו בחינם" CTAs — smooth scroll straight to the pricing section
+document.querySelectorAll('#start-free-nav, #start-free-hero').forEach(btn => {
+    btn.addEventListener('click', e => {
+        const target = document.getElementById('pricing');
+        if (target) {
+            e.preventDefault();
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    });
 });
-
-if (guidePrev) guidePrev.addEventListener('click', () => showGuideStep(Math.max(0, guideStep - 1)));
-if (guideNext) guideNext.addEventListener('click', () => showGuideStep(Math.min(guideSlides.length - 1, guideStep + 1)));
-
-const guideCloseFinal = document.getElementById('guide-close-final');
-if (guideCloseFinal && guideModal) {
-    guideCloseFinal.addEventListener('click', () => guideModal.style.display = 'none');
-}
