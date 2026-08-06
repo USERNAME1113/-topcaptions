@@ -179,3 +179,158 @@ footer a { color: var(--text-secondary); margin-top: 8px; display: inline-block;
 }
 .close-btn { position: absolute; top: 15px; left: 15px; font-size: 1.4rem; cursor: pointer; color: var(--text-secondary); }
 .modal-body p { font-size: 0.9rem; color: var(--text-secondary); margin-top: 12px; }
+
+/* Installation Guide Modal */
+.guide-box {
+    max-width: 480px;
+    width: 100%;
+    text-align: center;
+    padding: 40px 34px 32px;
+    overflow: visible;
+}
+
+.guide-step-tag {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: var(--brand-red);
+    background: rgba(255, 75, 96, 0.1);
+    border: 1px solid rgba(255, 75, 96, 0.3);
+    padding: 4px 14px;
+    border-radius: 20px;
+    margin-bottom: 16px;
+}
+
+.guide-title {
+    font-size: 1.25rem;
+    font-weight: 900;
+    color: var(--text-primary);
+    margin-bottom: 14px;
+    text-align: center;
+}
+
+.guide-text {
+    font-size: 0.92rem;
+    color: var(--text-secondary);
+    margin-bottom: 18px;
+    line-height: 1.7;
+}
+
+.guide-btn-download {
+    display: inline-block;
+    margin: 4px auto 22px;
+}
+
+.guide-filechip {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--bg-main);
+    border: 1px solid var(--card-border);
+    border-radius: 10px;
+    padding: 10px 18px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 18px;
+}
+.guide-filechip span { font-weight: 400; color: var(--text-secondary); font-size: 0.82rem; }
+
+.guide-mock {
+    background: var(--bg-main);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    padding: 20px;
+    margin: 6px 0 18px;
+    text-align: center;
+}
+
+.guide-mock-title { font-weight: 900; font-size: 1rem; margin-bottom: 8px; color: var(--text-primary); }
+.guide-mock-text { font-size: 0.82rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 16px; }
+
+.guide-mock-buttons { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+.guide-mock-btn {
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    color: var(--text-secondary);
+}
+.guide-highlight {
+    border: 2px solid var(--brand-red);
+    color: #fff;
+    background: rgba(255, 75, 96, 0.12);
+    box-shadow: 0 0 14px var(--brand-glow);
+}
+
+.guide-install-mock { position: relative; padding-top: 26px; }
+.guide-app-icon {
+    width: 40px; height: 40px; border-radius: 8px;
+    background: var(--brand-red); color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 900; font-size: 0.95rem;
+    margin: 0 auto 14px;
+    box-shadow: 0 0 14px var(--brand-glow);
+}
+.guide-mock-install-text { font-size: 0.88rem; color: var(--text-primary); margin-bottom: 4px; }
+.guide-cancel { opacity: 0.6; }
+
+.guide-hint {
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+}
+
+.guide-path-box {
+    background: var(--bg-main);
+    border: 1px solid var(--card-border);
+    border-radius: 10px;
+    padding: 14px;
+    font-family: monospace;
+    font-size: 0.92rem;
+    color: var(--brand-red);
+    margin-bottom: 18px;
+    direction: ltr;
+}
+
+.guide-slide { display: none; animation: fadeSlide 0.35s ease; }
+.guide-slide.active { display: block; }
+@keyframes fadeSlide {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.guide-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: var(--brand-red);
+    color: #fff;
+    border: none;
+    font-size: 1.35rem;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 16px var(--brand-glow);
+    transition: transform 0.3s var(--ease-elastic);
+    z-index: 5;
+}
+.guide-arrow:hover { transform: translateY(-50%) scale(1.1); }
+.guide-arrow.hidden { display: none; }
+
+.guide-prev { left: -58px; }
+.guide-next { right: -58px; }
+
+@media (max-width: 620px) {
+    .guide-prev { left: -14px; }
+    .guide-next { right: -14px; }
+    .guide-box { padding: 36px 22px 28px; }
+}

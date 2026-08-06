@@ -16,7 +16,7 @@
         <div class="nav-logo">
             <img src="logo.png" alt="Top Captions" class="logo-img glow-effect">
         </div>
-        <a href="TopCaptions-Setup.exe" download class="btn btn-nav">התחילו בחינם</a>
+        <a href="#" id="start-free-nav" class="btn btn-nav">התחילו בחינם</a>
     </header>
 
     <!-- Hero Section -->
@@ -32,7 +32,7 @@
             <span class="badge badge-win">Windows</span>
         </div>
         <div class="hero-cta">
-            <a href="TopCaptions-Setup.exe" download class="btn btn-main glow-button">התחילו בחינם</a>
+            <a href="#" id="start-free-hero" class="btn btn-main glow-button">התחילו בחינם</a>
         </div>
     </section>
 
@@ -245,6 +245,64 @@
                 <p><strong>פרטיות מלאה ועבודה מקומית:</strong> הפלאגין Top Captions פועל באופן מקומי על גבי המחשב שלך. איננו אוספים, שומרים או מעבירים מידע אישי, נתוני פרויקטים או קובצי מדיה לשרתים חיצוניים.</p>
                 <p><strong>רכישה וסליקה:</strong> נתוני התשלום והאימייל מעובדים באופן מאובטח בלבד על ידי ספק הסליקה המורשה בעת הרכישה לצורך הנפקת הקבלה ואספקת קובץ ההתקנה.</p>
                 <p><strong>רישיון לכל החיים:</strong> הרכישה מעניקה רישיון לשימוש אישי ומסחרי לכל החיים (Lifetime License) בתשלום חד-פעמי. אין מנוי מתחדש ואין עמלות נוספות.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Installation Guide Modal -->
+    <div id="guide-modal" class="modal guide-modal">
+        <div class="modal-box guide-box">
+            <span class="close-btn">&times;</span>
+            <button class="guide-arrow guide-prev" aria-label="הקודם">‹</button>
+            <button class="guide-arrow guide-next" aria-label="הבא">›</button>
+
+            <div class="guide-slides">
+
+                <!-- Step 1 -->
+                <div class="guide-slide active" data-step="1">
+                    <div class="guide-step-tag">שלב 1 מתוך 3</div>
+                    <h3 class="guide-title">שלב 1: הורדת ZXP Installer</h3>
+                    <p class="guide-text">הורידו את תוכנת ה-ZXP Installer החינמית, שמשמשת להתקנת תוספים (Extensions) בתוכנות אדובי.</p>
+                    <a href="https://aescripts.com/learn/zxp-installer/" target="_blank" rel="noopener" class="btn btn-main guide-btn-download">הורד ZXP Installer</a>
+
+                    <div class="guide-mock">
+                        <div class="guide-mock-title">ZXP/UXP Installer</div>
+                        <p class="guide-mock-text">כלי חינמי להתקנת תוספי CEP ו-UXP עבור Premiere Pro ,After Effects ותוכנות אדובי נוספות.</p>
+                        <div class="guide-mock-buttons">
+                            <span class="guide-mock-btn">Download macOS</span>
+                            <span class="guide-mock-btn guide-highlight">Download Windows</span>
+                        </div>
+                    </div>
+                    <p class="guide-hint">לחצו על הכפתור המסומן בתמונה ופתחו את הקובץ שהורדתם</p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="guide-slide" data-step="2">
+                    <div class="guide-step-tag">שלב 2 מתוך 3</div>
+                    <h3 class="guide-title">שלב 2: הורדת תוסף Top Captions</h3>
+                    <div class="guide-filechip">TopCaptions_4_.zxp <span>הורידו את הקובץ</span></div>
+                    <a href="TopCaptions_4_.zxp" download class="btn btn-main guide-btn-download">TopCaptions_4_.zxp הורד</a>
+
+                    <div class="guide-mock guide-install-mock">
+                        <p class="guide-mock-install-text">You are about to install <strong>Top Captions</strong> (1.0.0)</p>
+                        <div class="guide-app-icon">Pr</div>
+                        <div class="guide-mock-buttons">
+                            <span class="guide-mock-btn guide-cancel">Cancel</span>
+                            <span class="guide-mock-btn guide-highlight guide-install">Install</span>
+                        </div>
+                    </div>
+                    <p class="guide-hint">פתחו את הקובץ שהורדתם ולחצו על הכפתור המסומן בתמונה</p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="guide-slide" data-step="3">
+                    <h3 class="guide-title">התקנה הושלמה בהצלחה!</h3>
+                    <p class="guide-text">תוכלו למצוא את תוסף Top Captions בתוך Adobe Premiere Pro או Adobe After Effects דרך התפריט:</p>
+                    <div class="guide-path-box">Window ← Extensions ← Top Captions</div>
+                    <p class="guide-text">עכשיו אתם מוכנים להתחיל ליצור כתוביות בעברית!</p>
+                    <button id="guide-close-final" class="btn btn-main guide-btn-download">חזרה לדף הבית</button>
+                </div>
+
             </div>
         </div>
     </div>
