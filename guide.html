@@ -3,26 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Top Captions - מדריך התקנה</title>
+    <title>Top Captions – מדריך התקנה</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;700;900&display=swap" rel="stylesheet">
     <style>
         .guide-container {
             max-width: 800px;
-            margin: 60px auto;
+            margin: 52px auto 64px;
             padding: 0 20px;
-            position: relative;
-            min-height: 620px;
         }
         .step {
             display: none;
+            min-height: 430px;
+            box-sizing: border-box;
             background: #11131a;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.12);
             border-radius: 24px;
-            padding: 60px 40px;
+            padding: 56px 40px 42px;
             text-align: center;
-            animation: fadeIn 0.5s ease;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            animation: fadeIn 0.35s ease;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
         }
         .step.active { display: block; }
         @keyframes fadeIn {
@@ -31,29 +31,31 @@
         }
         .step-title {
             color: var(--accent-blue);
-            font-size: 1.8rem;
+            font-size: clamp(1.5rem, 4vw, 1.95rem);
             font-weight: 900;
-            margin-bottom: 20px;
+            margin: 0 0 20px;
         }
         .step-text {
+            max-width: 630px;
+            margin: 0 auto 22px;
             color: var(--text-primary);
             font-size: 1.1rem;
-            margin: 0 auto 22px;
-            max-width: 620px;
+            line-height: 1.8;
         }
         .guide-image {
             display: block;
-            max-width: 100%;
-            border-radius: 12px;
+            width: 100%;
+            max-width: 680px;
             margin: 24px auto 0;
             border: 1px solid var(--card-border);
+            border-radius: 12px;
         }
         .file-name {
             display: inline-block;
             padding: 7px 14px;
             border: 1px solid var(--card-border);
             border-radius: 8px;
-            background: rgba(255,255,255,0.05);
+            background: rgba(255, 255, 255, 0.05);
             color: #dbeafe;
             font-family: monospace;
             direction: ltr;
@@ -70,73 +72,73 @@
             line-height: 1.7;
         }
         .success-box {
-            background: rgba(255, 255, 255, 0.05);
+            max-width: 480px;
+            margin: 20px auto;
             padding: 20px;
             border-radius: 8px;
-            margin: 20px auto;
-            max-width: 480px;
+            background: rgba(255, 255, 255, 0.05);
             font-family: monospace;
             direction: ltr;
         }
-        .nav-arrows {
-            position: absolute;
-            top: 50%;
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            transform: translateY(-50%);
-            pointer-events: none;
-            padding: 0 10px;
-            left: 0;
-        }
-        .arrow-btn {
-            width: 45px;
-            height: 45px;
-            background: rgba(59, 130, 246, 0.2);
-            border: 1px solid var(--accent-blue);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            pointer-events: auto;
-            color: var(--accent-blue);
-            font-size: 1.2rem;
-            transition: all 0.3s ease;
-        }
-        .arrow-btn:hover {
-            transform: scale(1.1);
-            background: var(--accent-blue);
-            color: white;
-            box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
-        }
-        .arrow-btn.disabled {
-            opacity: 0.3;
-            cursor: not-allowed;
-            pointer-events: none;
+        .progress-text {
+            margin: 26px 0 12px;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            text-align: center;
         }
         .step-indicator {
             display: flex;
             justify-content: center;
             gap: 10px;
-            margin-top: 30px;
+            margin: 0 0 18px;
         }
         .dot {
             width: 10px;
             height: 10px;
+            border: 0;
+            padding: 0;
             background: var(--card-border);
             border-radius: 50%;
-            transition: all 0.3s ease;
+            cursor: pointer;
+            transition: transform 0.2s ease, background 0.2s ease;
         }
-        .dot.active {
+        .dot:hover, .dot:focus-visible { transform: scale(1.2); outline: 2px solid #93c5fd; outline-offset: 3px; }
+        .dot.active { background: var(--accent-blue); transform: scale(1.2); }
+        .step-navigation {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            max-width: 430px;
+            margin: 0 auto;
+            direction: rtl;
+        }
+        .step-nav-btn {
+            min-width: 142px;
+            border: 1px solid var(--accent-blue);
+            border-radius: 10px;
+            padding: 12px 18px;
+            background: rgba(59, 130, 246, 0.16);
+            color: #dbeafe;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 1rem;
+            font-weight: 700;
+            transition: transform 0.2s ease, background 0.2s ease, opacity 0.2s ease;
+        }
+        .step-nav-btn:hover:not(:disabled) {
+            transform: translateY(-2px);
             background: var(--accent-blue);
-            transform: scale(1.2);
+            color: #fff;
         }
+        .step-nav-btn:focus-visible { outline: 3px solid #93c5fd; outline-offset: 3px; }
+        .step-nav-btn:disabled { opacity: 0.35; cursor: not-allowed; }
         @media (max-width: 680px) {
-            .guide-container { margin: 30px auto; padding: 0 12px; min-height: 680px; }
-            .step { padding: 42px 22px; }
-            .step-title { font-size: 1.45rem; }
-            .nav-arrows { display: none; }
+            .guide-container { margin: 28px auto 42px; padding: 0 13px; }
+            .step { min-height: 450px; padding: 40px 20px 32px; border-radius: 18px; }
+            .step-text { font-size: 1rem; }
+            .step-navigation { gap: 10px; }
+            .step-nav-btn { min-width: 0; flex: 1; padding: 11px 8px; }
         }
     </style>
 </head>
@@ -150,53 +152,29 @@
     </header>
 
     <main class="guide-container">
-        <!-- Step 1 -->
-        <section class="step active" id="step1">
-            <h1 class="step-title">שלב 1: הורדת Top Captions</h1>
+        <section class="step active" id="step1" aria-labelledby="title1">
+            <h1 class="step-title" id="title1">שלב 1: הורדת Top Captions</h1>
             <p class="step-text">הורידו את קובץ ההתקנה למחשב Windows.</p>
             <a href="TopCaptions.exe" download="TopCaptions.exe" class="btn btn-main" style="background: var(--accent-blue); box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);">הורדת Top Captions ל־Windows</a>
-            <p style="margin-top: 24px; color: var(--text-secondary);">שם הקובץ שיורד:</p>
+            <p style="margin: 24px 0 10px; color: var(--text-secondary);">שם הקובץ שיורד:</p>
             <span class="file-name">TopCaptions.exe</span>
         </section>
 
-        <!-- Step 2 -->
-<<<<<<< Updated upstream
-        <div class="step" id="step2">
-            <h2 class="step-title">שלב 2: הורדת תוסף Top Captions</h2>
-            <p class="step-text">הורידו את קובץ הפלאגין והתקינו אותו באמצעות ה-ZXP Installer.</p>
-            <a href="TopCaptions_4_.zxp" download class="btn btn-main">הורד TopCaptions.zxp</a>
-            <div style="margin-top: 30px;">
-                <div style="background: #1a1c23; padding: 20px; border-radius: 12px; border: 1px solid var(--card-border); max-width: 300px; margin: 0 auto;">
-                    <p style="font-size: 0.9rem; margin-bottom: 10px;">You are about to install Top Captions (1.0.0)</p>
-                    <div style="display: flex; justify-content: space-around; margin-top: 15px;">
-                        <button class="btn" style="background: #333; padding: 5px 15px; font-size: 0.8rem;">Cancel</button>
-                        <button class="btn" style="background: #e91e63; padding: 5px 15px; font-size: 0.8rem;">Install</button>
-                    </div>
-                </div>
-                <p style="margin-top: 20px; font-size: 0.9rem; color: var(--text-secondary);">פתחו את הקובץ ולחצו על הכפתור המסומן בתמונה</p>
-=======
-        <section class="step" id="step2">
-            <h2 class="step-title">שלב 2: פתיחת קובץ ההתקנה</h2>
+        <section class="step" id="step2" aria-labelledby="title2">
+            <h2 class="step-title" id="title2">שלב 2: פתיחת קובץ ההתקנה</h2>
             <p class="step-text">בסיום ההורדה, פתחו את תיקיית ההורדות ולחצו פעמיים על הקובץ <span class="file-name">TopCaptions.exe</span>.</p>
-            <div class="safety-note">
-                המשיכו רק אם הורדתם את הקובץ מהקישור הרשמי של Top Captions ואתם מצפים להתקין אותו. אם שם האפליקציה או מקור הקובץ שונים, סגרו את החלון ואל תמשיכו.
->>>>>>> Stashed changes
-            </div>
+            <div class="safety-note">המשיכו רק אם הורדתם את הקובץ מהקישור הרשמי של Top Captions ואתם מצפים להתקין אותו. אם שם האפליקציה או מקור הקובץ שונים, סגרו את החלון ואל תמשיכו.</div>
         </section>
 
-        <!-- Step 3 -->
-        <section class="step" id="step3">
-            <h2 class="step-title">שלב 3: הודעת Windows SmartScreen</h2>
+        <section class="step" id="step3" aria-labelledby="title3">
+            <h2 class="step-title" id="title3">שלב 3: הודעת Windows SmartScreen</h2>
             <p class="step-text">ייתכן ש־Windows יציג הודעת הגנה. אם הקובץ הגיע מהקישור הרשמי ואתם מזהים אותו, לחצו תחילה על <strong>מידע נוסף (More info)</strong>, ולאחר מכן על <strong>הפעל בכל זאת (Run anyway)</strong>.</p>
-            <img src="smartscreen-guide.png" alt="חלון Windows SmartScreen עם סימון על More info ולאחר מכן על Run anyway" class="guide-image">
-            <div class="safety-note">
-                אל תלחצו על <strong>הפעל בכל זאת (Run anyway)</strong> עבור קובץ שלא הורדתם ממקור מהימן או שאינכם מזהים.
-            </div>
+            <img src="smartscreen-guide.png" alt="המחשה של Windows SmartScreen: לחיצה על מידע נוסף ולאחר מכן על הפעל בכל זאת עבור TopCaptions.exe" class="guide-image">
+            <div class="safety-note">אל תלחצו על <strong>הפעל בכל זאת (Run anyway)</strong> עבור קובץ שלא הורדתם ממקור מהימן או שאינכם מזהים.</div>
         </section>
 
-        <!-- Step 4 -->
-        <section class="step" id="step4">
-            <h2 class="step-title" style="color: #4ade80;">שלב 4: סיום ההתקנה</h2>
+        <section class="step" id="step4" aria-labelledby="title4">
+            <h2 class="step-title" id="title4" style="color: #4ade80;">שלב 4: סיום ההתקנה</h2>
             <p class="step-text">המשיכו בהוראות שמופיעות בחלון ההתקנה עד לסיום. אם Adobe After Effects או Adobe Premiere Pro כבר פתוחים, סגרו ופתחו אותם מחדש.</p>
             <p class="step-text">לאחר מכן תוכלו למצוא את Top Captions בתפריט:</p>
             <div class="success-box">Window → Extensions → Top Captions</div>
@@ -204,17 +182,17 @@
             <a href="index.html" class="btn btn-main" style="background: #4ade80; box-shadow: 0 0 20px rgba(74, 222, 128, 0.4);">חזרה לדף הבית</a>
         </section>
 
-        <nav class="nav-arrows" aria-label="ניווט בין שלבי המדריך">
-            <button class="arrow-btn" id="prevBtn" onclick="changeStep(-1)" aria-label="השלב הקודם">&#8250;</button>
-            <button class="arrow-btn" id="nextBtn" onclick="changeStep(1)" aria-label="השלב הבא">&#8249;</button>
+        <p class="progress-text" id="progressText" aria-live="polite">שלב 1 מתוך 4</p>
+        <nav class="step-indicator" aria-label="מעבר ישיר בין שלבי המדריך">
+            <button class="dot active" type="button" onclick="goToStep(1)" aria-label="מעבר לשלב 1" aria-current="step"></button>
+            <button class="dot" type="button" onclick="goToStep(2)" aria-label="מעבר לשלב 2"></button>
+            <button class="dot" type="button" onclick="goToStep(3)" aria-label="מעבר לשלב 3"></button>
+            <button class="dot" type="button" onclick="goToStep(4)" aria-label="מעבר לשלב 4"></button>
         </nav>
-
-        <div class="step-indicator" aria-label="התקדמות במדריך">
-            <div class="dot active"></div>
-            <div class="dot"></div>
-            <div class="dot"></div>
-            <div class="dot"></div>
-        </div>
+        <nav class="step-navigation" aria-label="מעבר בין שלבי המדריך">
+            <button class="step-nav-btn" id="prevBtn" type="button" onclick="changeStep(-1)">← השלב הקודם</button>
+            <button class="step-nav-btn" id="nextBtn" type="button" onclick="changeStep(1)">השלב הבא →</button>
+        </nav>
     </main>
 
     <script>
@@ -225,18 +203,29 @@
             document.querySelectorAll('.step').forEach((step, index) => {
                 step.classList.toggle('active', index + 1 === currentStep);
             });
+
             document.querySelectorAll('.dot').forEach((dot, index) => {
-                dot.classList.toggle('active', index + 1 === currentStep);
+                const isActive = index + 1 === currentStep;
+                dot.classList.toggle('active', isActive);
+                dot.setAttribute('aria-current', isActive ? 'step' : 'false');
             });
-            document.getElementById('prevBtn').classList.toggle('disabled', currentStep === 1);
-            document.getElementById('nextBtn').classList.toggle('disabled', currentStep === totalSteps);
+
+            const prevButton = document.getElementById('prevBtn');
+            const nextButton = document.getElementById('nextBtn');
+            prevButton.disabled = currentStep === 1;
+            nextButton.disabled = currentStep === totalSteps;
+            document.getElementById('progressText').textContent = `שלב ${currentStep} מתוך ${totalSteps}`;
         }
 
         function changeStep(direction) {
-            const newStep = currentStep + direction;
-            if (newStep >= 1 && newStep <= totalSteps) {
-                currentStep = newStep;
+            goToStep(currentStep + direction);
+        }
+
+        function goToStep(stepNumber) {
+            if (stepNumber >= 1 && stepNumber <= totalSteps) {
+                currentStep = stepNumber;
                 updateUI();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
             }
         }
 
