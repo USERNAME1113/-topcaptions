@@ -46,6 +46,5 @@ if (privacyLink && privacyModal) {
     privacyLink.addEventListener('click', e => { e.preventDefault(); privacyModal.style.display = 'flex'; });
 }
 
-// "התחילו בחינם" buttons now download the .zxp plugin file directly via the
-// native href+download attributes on the <a> tags — no JS needed for that.
-// (Intentionally no click handler here so the browser's default download behavior isn't blocked.)
+// "התחילו בחינם" buttons open the EXE installation guide via their native href
+// attributes. No JavaScript click handler is needed for this navigation.

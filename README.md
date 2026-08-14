@@ -12,7 +12,7 @@ This is the official website for Top Captions, an automatic Hebrew captioning pl
 This site is designed to be hosted on GitHub Pages.
 - `index.html`: Main landing page.
 - `guide.html`: Installation guide.
-- `TopCaptions_4_.zxp`: The plugin file.
+- `TopCaptions.exe`: Windows installer file.
 
 ## How to use
 1. Upload all files to a GitHub repository.
