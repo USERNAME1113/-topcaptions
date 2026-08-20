@@ -1,20 +1,26 @@
 # Top Captions Website
 
-This is the official website for Top Captions, an automatic Hebrew captioning plugin for Adobe Premiere Pro and After Effects.
+אתר סטטי ל־Top Captions, המיועד לפרסום ב־GitHub Pages. האתר כולל מסלול הורדה חינמי המאפשר לבחור את מערכת ההפעלה לפני המעבר למדריך המתאים.
 
-## Features
-- Modern, responsive design.
-- Local processing for privacy and speed.
-- Support for Premiere Pro & After Effects on Windows.
-- Integrated installation guide.
+| מערכת הפעלה | חבילת הורדה | מדריך התקנה |
+|---|---|---|
+| Windows | `TopCaptions-Windows.zip` | `guide-windows.html` |
+| macOS | `TopCaptions-macOS.zip` | `guide.html` |
 
-## Deployment
-This site is designed to be hosted on GitHub Pages.
-- `index.html`: Main landing page.
-- `guide.html`: Installation guide.
-- `TopCaptions.exe`: Windows installer file.
+לחיצה על **„התחילו בחינם”** פותחת חלון בחירה הכולל את הכפתורים `FOR WINDOWS` ו־`FOR MAC OS`. בכל מדריך קיים קישור הורדה ישיר ששומר את הקובץ בפורמט ZIP.
 
-## How to use
-1. Upload all files to a GitHub repository.
-2. Enable GitHub Pages in the repository settings.
-3. The site will be live at your custom domain or GitHub Pages URL.
+## קבצים עיקריים
+
+| קובץ | תפקיד |
+|---|---|
+| `index.html` | דף הבית וחלון בחירת מערכת ההפעלה. |
+| `guide-windows.html` | מדריך התקנה ל־Windows. |
+| `guide.html` | מדריך התקנה ל־macOS. |
+| `TopCaptions-Windows.zip` | חבילת ההתקנה ל־Windows. |
+| `TopCaptions-macOS.zip` | חבילת ההתקנה ל־macOS. |
+| `style.css` | העיצוב הגלובלי של האתר. |
+| `script.js` | התנהגות חלון הבחירה, שאלות נפוצות וחלונות האתר. |
+
+## פרסום ב־GitHub Pages
+
+יש להעלות את **כל הקבצים**, כולל שתי חבילות ה־ZIP, לאותו ענף שמפורסם ב־GitHub Pages. הקישורים באתר הם יחסיים, ולכן שתי חבילות ההורדה חייבות להישאר בתיקיית השורש לצד `index.html`.

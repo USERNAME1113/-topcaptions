@@ -16,7 +16,7 @@
         <div class="nav-logo">
             <img src="logo.png" alt="Top Captions" class="logo-img glow-effect">
         </div>
-        <a href="guide.html" id="start-free-nav" class="btn btn-nav">התחילו בחינם</a>
+        <button type="button" id="start-free-nav" class="btn btn-nav" data-platform-selector>התחילו בחינם</button>
     </header>
 
     <!-- Hero Section -->
@@ -30,9 +30,10 @@
             <span class="badge">Premiere Pro</span>
             <span class="badge">After Effects</span>
             <span class="badge badge-win">Windows</span>
+            <span class="badge badge-mac">macOS</span>
         </div>
         <div class="hero-cta">
-            <a href="guide.html" id="start-free-hero" class="btn btn-main glow-button">התחילו בחינם</a>
+            <button type="button" id="start-free-hero" class="btn btn-main glow-button" data-platform-selector>התחילו בחינם</button>
         </div>
     </section>
 
@@ -168,7 +169,7 @@
             <ul class="features">
                 <li>✓ תוסף מקומי מלא על המחשב שלך</li>
                 <li>✓ תמיכה מלאה ב-Premiere Pro & After Effects</li>
-                <li>✓ תמיכה במערכת הפעלה Windows</li>
+                <li>✓ תמיכה במערכות ההפעלה Windows ו־macOS</li>
                 <li>✓ תמלול עברית מהיר ומדויק בלחיצה</li>
                 <li>✓ ללא תשלומים חודשיים וללא עמלות נסתרות</li>
             </ul>
@@ -195,7 +196,7 @@
                     <span class="arrow">+</span>
                 </button>
                 <div class="faq-content">
-                    <p>הפלאגין פותח במיוחד עבור <strong>Adobe Premiere Pro</strong> ו-<strong>Adobe After Effects</strong> ומותאם לעבודה על מערכת <strong>Windows</strong> בלבד.</p>
+                    <p>הפלאגין פותח במיוחד עבור <strong>Adobe Premiere Pro</strong> ו-<strong>Adobe After Effects</strong> ותומך במערכות <strong>Windows</strong> ו־<strong>macOS</strong>. לחצו על „התחילו בחינם” ובחרו את מערכת ההפעלה שלכם לקבלת החבילה והמדריך המתאימים.</p>
                 </div>
             </div>
             <div class="faq-item">
@@ -224,6 +225,25 @@
         <p>© 2026 Top Captions. כל הזכויות שמורות.</p>
         <a href="#" id="privacy-link">מדיניות פרטיות ותנאי שימוש</a>
     </footer>
+
+    <!-- Platform Selector Modal -->
+    <div id="platform-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="platform-modal-title" aria-hidden="true">
+        <div class="modal-box platform-modal-box">
+            <button type="button" class="close-btn" aria-label="סגור את חלון בחירת מערכת ההפעלה">&times;</button>
+            <h2 id="platform-modal-title">בחרו את מערכת ההפעלה שלכם</h2>
+            <p class="platform-modal-intro">בחרו חבילה מתאימה. ההורדה נשמרת בפורמט ZIP וכוללת מדריך התקנה ייעודי.</p>
+            <div class="platform-options" role="group" aria-label="בחירת מערכת הפעלה">
+                <a href="guide-windows.html" class="platform-option platform-windows">
+                    <span class="platform-option-title">FOR WINDOWS</span>
+                    <span class="platform-option-copy">חבילת ZIP ומדריך התקנה ל־Windows</span>
+                </a>
+                <a href="guide.html" class="platform-option platform-macos">
+                    <span class="platform-option-title">FOR MAC OS</span>
+                    <span class="platform-option-copy">חבילת ZIP ומדריך התקנה ל־macOS</span>
+                </a>
+            </div>
+        </div>
+    </div>
 
     <!-- Privacy Modal -->
     <div id="privacy-modal" class="modal">

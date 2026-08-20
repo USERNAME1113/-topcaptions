@@ -178,3 +178,33 @@ footer a { color: var(--text-secondary); margin-top: 8px; display: inline-block;
 .modal-body p { font-size: 0.9rem; color: var(--text-secondary); margin-top: 12px; }
 
 
+
+/* Platform selection modal */
+.badge-mac { border-color: rgba(148, 163, 184, 0.5); color: #dbeafe; }
+.badge-mac:hover { border-color: #dbeafe; box-shadow: 0 0 12px rgba(219, 234, 254, 0.22); }
+
+.btn { font-family: inherit; cursor: pointer; }
+.btn:active, .platform-option:active { transform: scale(0.97); }
+
+.platform-modal-box { width: min(100%, 580px); padding: 38px 32px 32px; }
+.platform-modal-box h2 { font-size: 1.55rem; margin: 0 0 10px; padding-left: 28px; }
+.platform-modal-intro { color: var(--text-secondary); text-align: center; line-height: 1.65; margin: 0 auto 24px; max-width: 430px; }
+.platform-options { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.platform-option { display: flex; min-height: 145px; flex-direction: column; justify-content: center; gap: 10px; padding: 20px 16px; border: 1px solid var(--card-border); border-radius: 14px; color: var(--text-primary); background: rgba(255, 255, 255, 0.025); text-align: center; text-decoration: none; transition: transform 180ms cubic-bezier(0.23, 1, 0.32, 1), border-color 180ms ease, background 180ms ease, box-shadow 180ms ease; }
+.platform-option:hover, .platform-option:focus-visible { transform: translateY(-3px); outline: none; }
+.platform-option:focus-visible { outline: 3px solid #93c5fd; outline-offset: 3px; }
+.platform-windows:hover { border-color: var(--accent-blue); background: rgba(59, 130, 246, 0.10); box-shadow: 0 10px 28px rgba(59, 130, 246, 0.12); }
+.platform-macos:hover { border-color: #dbeafe; background: rgba(219, 234, 254, 0.07); box-shadow: 0 10px 28px rgba(219, 234, 254, 0.10); }
+.platform-option-title { color: #fff; direction: ltr; font-size: 1rem; font-weight: 900; letter-spacing: 0.05em; }
+.platform-option-copy { color: var(--text-secondary); font-size: 0.88rem; line-height: 1.5; }
+
+@media (max-width: 540px) {
+    .software-badges { flex-wrap: wrap; }
+    .platform-modal-box { padding: 34px 20px 22px; }
+    .platform-options { grid-template-columns: 1fr; }
+    .platform-option { min-height: 110px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { scroll-behavior: auto !important; transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; }
+}

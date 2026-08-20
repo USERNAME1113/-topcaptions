@@ -28,23 +28,60 @@ const observer = new IntersectionObserver(entries => {
 }, { threshold: 0.12 });
 document.querySelectorAll('.reveal-on-scroll').forEach(el => observer.observe(el));
 
-// Generic Modal Handling (privacy modal)
+// Modal handling
+function hideModal(modal) {
+    if (!modal) return;
+    modal.style.display = 'none';
+    modal.setAttribute('aria-hidden', 'true');
+}
+
 document.querySelectorAll('.modal .close-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-        const parentModal = btn.closest('.modal');
-        if (parentModal) parentModal.style.display = 'none';
+    btn.addEventListener('click', () => hideModal(btn.closest('.modal')));
+});
+document.querySelectorAll('.modal').forEach(modal => {
+    modal.addEventListener('click', event => {
+        if (event.target === modal) hideModal(modal);
     });
 });
-document.querySelectorAll('.modal').forEach(m => {
-    m.addEventListener('click', e => { if (e.target === m) m.style.display = 'none'; });
+
+// Platform selection for the free-start buttons
+const platformModal = document.getElementById('platform-modal');
+let lastPlatformTrigger = null;
+
+function openPlatformModal(trigger) {
+    if (!platformModal) return;
+    lastPlatformTrigger = trigger;
+    platformModal.style.display = 'flex';
+    platformModal.setAttribute('aria-hidden', 'false');
+    platformModal.querySelector('.close-btn')?.focus();
+}
+
+function closePlatformModal() {
+    hideModal(platformModal);
+    lastPlatformTrigger?.focus();
+}
+
+document.querySelectorAll('[data-platform-selector]').forEach(trigger => {
+    trigger.addEventListener('click', () => openPlatformModal(trigger));
 });
 
-// Privacy Modal
+platformModal?.querySelector('.close-btn')?.addEventListener('click', closePlatformModal);
+platformModal?.addEventListener('click', event => {
+    if (event.target === platformModal) closePlatformModal();
+});
+
+document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && platformModal?.style.display === 'flex') closePlatformModal();
+});
+
+// Privacy modal
 const privacyModal = document.getElementById('privacy-modal');
 const privacyLink = document.getElementById('privacy-link');
 if (privacyLink && privacyModal) {
-    privacyLink.addEventListener('click', e => { e.preventDefault(); privacyModal.style.display = 'flex'; });
+    privacyLink.addEventListener('click', event => {
+        event.preventDefault();
+        privacyModal.style.display = 'flex';
+        privacyModal.setAttribute('aria-hidden', 'false');
+        privacyModal.querySelector('.close-btn')?.focus();
+    });
 }
-
-// "התחילו בחינם" buttons open the EXE installation guide via their native href
-// attributes. No JavaScript click handler is needed for this navigation.
